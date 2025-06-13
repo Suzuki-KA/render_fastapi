@@ -59,3 +59,7 @@ def index():
     </html>
     """
     return HTMLResponse(content=html_content, status_code=200)
+
+@app.post("/greeting")
+async def give_greeting(name:str):
+    return {"response": f"おはようございます！ {name}さん。最近どうですか。元気にしてますか？"}  # f文字列というPythonの機能を使っている
